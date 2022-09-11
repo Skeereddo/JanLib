@@ -23,7 +23,7 @@ name:AddToggle({text = "Toggle", flag = "Slider",  callback = function(value)
     name = callback
 while true do
     if not name then break end
-    if e then
+    if name then
 --code
     end
         task.wait()
