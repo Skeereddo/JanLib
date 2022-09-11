@@ -18,7 +18,7 @@ name:AddButton({text = "Button", flag = "Button",  callback = function()
 
 end});
 
---New Toggle: (U need to have the e  = b, just use while e do etc)
+--New Toggle: (U need to have the e  = b, just use "while e do" etc.)
 name:AddToggle({text = "Toggle", flag = "Toggle", callback = function(b)
 e = b
 
