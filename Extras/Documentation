@@ -1,0 +1,60 @@
+--New UI: I honestly dont know what flags do so dont ask me
+loadstring(game:HttpGet('https://raw.githubusercontent.com/zachisfunny/JanLib/main/UI%20Code'))()
+
+--New Tab:
+local name = library:AddTab(""); 
+
+--New Column: Creates a new side to put stuff on (2 max on a tab)
+local name = name:AddColumn();
+
+--New Section: (Adds a new box to add stuff in)
+local name = name:AddSection("Aim Assist")
+
+--New Divider (Adds a line and a title inbetween what you want)
+name:AddDivider("Main");
+
+--New Button:
+name:AddButton({text = "Button", flag = "Button",  callback = function()
+
+end});
+
+--New Toggle:
+name:AddToggle({text = "Toggle", flag = "Slider",  callback = function(value)
+    name = callback
+while true do
+    if not name then break end
+    if e then
+--code
+    end
+        task.wait()
+    end
+end, state = false})
+
+--New Slider:
+name:AddSlider{text = "Slider", flag = "Slider", min = 0, max = 100, value = 100, suffix = "%", callback =  function(value)
+
+end}
+
+--New Dropdown:
+name:AddList({text = "Dropdown", flag = "Dropdown", value = "Head", values = {"Head", "Torso"}, callback =  function(value)
+
+end});
+
+--New TextBox:
+name:AddBox({text = "Config r", flag = "TextBox", callback = function(value)
+
+end});
+
+--New KeyBind:
+name:AddBind({text = "Keybind", flag = "Keybind", nomouse = false, key = "End", callback = function()
+
+end});
+
+--New ColorPicker:
+name:AddColor({text = "ColorPicker", flag = "ColorPicker", color = Color3.new(0, 0, 0), callback = function(value)
+
+end});
+
+--Inits: (you need these if you want ur script to work)
+library:Init();
+library:selectTab(library.tabs[1]);
