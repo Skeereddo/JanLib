@@ -889,7 +889,7 @@ library.createList = function(option, parent)
     option.arrow = library:Create("ImageLabel", {
         Position = UDim2.new(1, -16, 0, 7),
         Size = UDim2.new(0, 8, 0, 8),
-        Rotation = 90,
+        Rotation = -90,
         BackgroundTransparency = 1,
         Image = "rbxassetid://4918373417",
         ImageColor3 = Color3.new(1, 1, 1),
@@ -969,7 +969,7 @@ library.createList = function(option, parent)
             if library.popup then
                 library.popup:Close()
             end
-            option.arrow.Rotation = -90
+            option.arrow.Rotation = 90
             option.open = true
             option.holder.Visible = true
             local pos = option.main.AbsolutePosition
@@ -1137,7 +1137,7 @@ library.createList = function(option, parent)
 
     function option:Close()
         library.popup = nil
-        option.arrow.Rotation = 90
+        option.arrow.Rotation = -90
         self.open = false
         option.holder.Visible = false
         option.listvalue.BorderColor3 = Color3.new()
