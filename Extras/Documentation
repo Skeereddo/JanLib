@@ -19,15 +19,8 @@ name:AddButton({text = "Button", flag = "Button",  callback = function()
 end});
 
 --New Toggle:
-name:AddToggle({text = "Toggle", flag = "Slider",  callback = function(value)
-    name = callback
-while true do
-    if not name then break end
-    if name then
---code
-    end
-        task.wait()
-    end
+name:AddToggle({text = "Toggle", flag = "Toggle", callback = function(b)
+
 end, state = false})
 
 --New Slider:
