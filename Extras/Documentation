@@ -55,6 +55,6 @@ name:AddColor({text = "ColorPicker", flag = "ColorPicker", color = Color3.new(0,
 
 end});
 
---Inits: (you need these if you want ur script to work)
+--Inits: (you need to always put these at the very end of your script if you want ur script to work)
 library:Init();
 library:selectTab(library.tabs[1]);
