@@ -5,16 +5,14 @@ local name = e:AddColumn();
 local r = name:AddSection("Aim Assist")
 r:AddDivider("Main");
 
-r:AddToggle({text = "Toggle", flag = "AimbotFov",  callback = function(callback)
-    e = callback
-while true do
-    if not e then break end
-    if e then
+r:AddToggle({text = "Toggle", flag = "Toggle", callback = function(b)
+e=b
+while e do
 print("works")
-    end
-        task.wait()
-    end
+task.wait()
+end
 end, state = false})
+
 r:AddSlider{text = "Aimbot FOV", flag = "AimbotFov", min = 0, max = 750, value = 105, suffix = "°", callback =  function(callback)
     print(callback)
 end}
