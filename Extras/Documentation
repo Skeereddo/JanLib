@@ -1,5 +1,5 @@
---New UI: I honestly dont know what flags do so dont ask me
-loadstring(game:HttpGet('https://raw.githubusercontent.com/zachisfunny/JanLib/main/UI%20Code'))()
+--New UI:
+loadstring(game:HttpGet('https://raw.githubusercontent.com/zachisfunny/JanLib/main/Lib'))()
 
 --New Tab:
 local name = library:AddTab(""); 
@@ -7,10 +7,10 @@ local name = library:AddTab("");
 --New Column: Creates a new side to put stuff on (2 max on a tab)
 local name = name:AddColumn();
 
---New Section: (Adds a new box to add stuff in)
+--New Section:
 local name = name:AddSection("Aim Assist")
 
---New Divider (Adds a line and a title inbetween what you want)
+--New Divider:
 name:AddDivider("Main");
 
 --New Button:
@@ -18,7 +18,7 @@ name:AddButton({text = "Button", flag = "Button",  callback = function()
 
 end});
 
---New Toggle: (U need to have the e  = value, just use "while e do" etc.)
+--New Toggle:
 name:AddToggle({text = "Toggle", flag = "Toggle", callback = function(value)
 e = value
 
@@ -49,6 +49,5 @@ name:AddColor({text = "ColorPicker", flag = "ColorPicker", color = Color3.new(0,
 
 end});
 
---Inits: (you need to always put these at the very end of your script if you want ur script to work)
+--Init:
 library:Init();
-library:selectTab(library.tabs[1]);
