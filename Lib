@@ -183,14 +183,14 @@ library.createLabel = function(option, parent)
 end
 
 library.createDivider = function(option, parent)
-    option.main = library:Create("Frame", {
+    option.main = library:Create("Square", {
         LayoutOrder = option.position,
         Size = UDim2.new(1, 0, 0, 18),
         BackgroundTransparency = 1,
         Parent = parent
     })
 
-    library:Create("Frame", {
+    library:Create("Square", {
         AnchorPoint = Vector2.new(0.5, 0.5),
         Position = UDim2.new(0.5, 0, 0.5, 0),
         Size = UDim2.new(1, -24, 0, 1),
@@ -230,7 +230,7 @@ end
 library.createToggle = function(option, parent)
     option.hasInit = true
 
-    option.main = library:Create("Frame", {
+    option.main = library:Create("Square", {
         LayoutOrder = option.position,
         Size = UDim2.new(1, 0, 0, 20),
         BackgroundTransparency = 1,
@@ -292,7 +292,7 @@ library.createToggle = function(option, parent)
 
         table.insert(library.theme, tickboxOverlay)
     else
-        tickbox = library:Create("Frame", {
+        tickbox = library:Create("Square", {
             Position = UDim2.new(0, 6, 0, 4),
             Size = UDim2.new(0, 12, 0, 12),
             BackgroundColor3 = library.flags["Menu Accent Color"],
@@ -335,7 +335,7 @@ library.createToggle = function(option, parent)
         table.insert(library.theme, tickbox)
     end
 
-    option.interest = library:Create("Frame", {
+    option.interest = library:Create("Square", {
         Position = UDim2.new(0, 0, 0, 0),
         Size = UDim2.new(1, 0, 0, 20),
         BackgroundTransparency = 1,
@@ -434,7 +434,7 @@ end
 library.createButton = function(option, parent)
     option.hasInit = true
 
-    option.main = library:Create("Frame", {
+    option.main = library:Create("Square", {
         LayoutOrder = option.position,
         Size = UDim2.new(1, 0, 0, 28),
         BackgroundTransparency = 1,
@@ -528,7 +528,7 @@ library.createBind = function(option, parent)
     if option.sub then
         option.main = option:getMain()
     else
-        option.main = option.main or library:Create("Frame", {
+        option.main = option.main or library:Create("Square", {
             LayoutOrder = option.position,
             Size = UDim2.new(1, 0, 0, 20),
             BackgroundTransparency = 1,
@@ -639,7 +639,7 @@ library.createSlider = function(option, parent)
         option.main = option:getMain()
         option.main.Size = UDim2.new(1, 0, 0, 42)
     else
-        option.main = library:Create("Frame", {
+        option.main = library:Create("Square", {
             LayoutOrder = option.position,
             Size = UDim2.new(1, 0, 0, option.textpos and 24 or 40),
             BackgroundTransparency = 1,
@@ -647,7 +647,7 @@ library.createSlider = function(option, parent)
         })
     end
 
-    option.slider = library:Create("Frame", {
+    option.slider = library:Create("Square", {
         Position = UDim2.new(0, 6, 0, (option.sub and 22 or option.textpos and 4 or 20)),
         Size = UDim2.new(1, -12, 0, 16),
         BackgroundColor3 = Color3.fromRGB(50, 50, 50),
@@ -664,7 +664,7 @@ library.createSlider = function(option, parent)
         Parent = option.slider
     })
 
-    option.fill = library:Create("Frame", {
+    option.fill = library:Create("Square", {
         BackgroundColor3 = library.flags["Menu Accent Color"],
         BorderSizePixel = 0,
         Parent = option.slider
@@ -812,7 +812,7 @@ library.createList = function(option, parent)
         option.main = option:getMain()
         option.main.Size = UDim2.new(1, 0, 0, 48)
     else
-        option.main = library:Create("Frame", {
+        option.main = library:Create("Square", {
             LayoutOrder = option.position,
             Size = UDim2.new(1, 0, 0, option.text == "nil" and 30 or 48),
             BackgroundTransparency = 1,
@@ -1149,7 +1149,7 @@ end
 library.createBox = function(option, parent)
     option.hasInit = true
 
-    option.main = library:Create("Frame", {
+    option.main = library:Create("Square", {
         LayoutOrder = option.position,
         Size = UDim2.new(1, 0, 0, option.text == "nil" and 28 or 44),
         BackgroundTransparency = 1,
@@ -1170,7 +1170,7 @@ library.createBox = function(option, parent)
         })
     end
 
-    option.holder = library:Create("Frame", {
+    option.holder = library:Create("Square", {
         Position = UDim2.new(0, 6, 0, option.text == "nil" and 4 or 20),
         Size = UDim2.new(1, -12, 0, 20),
         BackgroundColor3 = Color3.fromRGB(50, 50, 50),
@@ -1292,7 +1292,7 @@ library.createColorPickerWindow = function(option)
         Parent = library.base
     })
 
-    option.rgbBox = library:Create("Frame", {
+    option.rgbBox = library:Create("Square", {
         Position = UDim2.new(0, 6, 0, 214),
         Size = UDim2.new(0, (option.mainHolder.AbsoluteSize.X - 12), 0, 20),
         BackgroundColor3 = Color3.fromRGB(57, 57, 57),
@@ -1406,7 +1406,7 @@ library.createColorPickerWindow = function(option)
             })
         })
 
-        option.transSlider = library:Create("Frame", {
+        option.transSlider = library:Create("Square", {
             ZIndex = 5,
             Position = UDim2.new(0, 0, option.trans, 0),
             Size = UDim2.new(1, 0, 0, 2),
@@ -1429,7 +1429,7 @@ library.createColorPickerWindow = function(option)
         end)
     end
 
-    local hueMain = library:Create("Frame", {
+    local hueMain = library:Create("Square", {
         ZIndex = 4,
         AnchorPoint = Vector2.new(0, 1),
         Position = UDim2.new(0, 6, 1, -54),
@@ -1452,7 +1452,7 @@ library.createColorPickerWindow = function(option)
         Parent = hueMain
     })
 
-    local hueSlider = library:Create("Frame", {
+    local hueSlider = library:Create("Square", {
         ZIndex = 4,
         Position = UDim2.new(1 - hue, 0, 0, 0),
         Size = UDim2.new(0, 2, 1, 0),
@@ -1487,7 +1487,7 @@ library.createColorPickerWindow = function(option)
         Parent = option.mainHolder
     })
 
-    local satvalSlider = library:Create("Frame", {
+    local satvalSlider = library:Create("Square", {
         ZIndex = 4,
         AnchorPoint = Vector2.new(0.5, 0.5),
         Position = UDim2.new(sat, 0, 1 - val, 0),
@@ -1583,7 +1583,7 @@ library.createColor = function(option, parent)
     if option.sub then
         option.main = option:getMain()
     else
-        option.main = library:Create("Frame", {
+        option.main = library:Create("Square", {
             LayoutOrder = option.position,
             Size = UDim2.new(1, 0, 0, 20),
             BackgroundTransparency = 1,
@@ -1603,7 +1603,7 @@ library.createColor = function(option, parent)
         })
     end
 
-    option.visualize = library:Create(option.sub and "TextButton" or "Frame", {
+    option.visualize = library:Create(option.sub and "TextButton" or "Square", {
         Position = UDim2.new(1, -(option.subpos or 0) - 24, 0, 4),
         Size = UDim2.new(0, 18, 0, 12),
         SizeConstraint = Enum.SizeConstraint.RelativeYY,
@@ -2090,13 +2090,13 @@ function library:AddTab(title, pos)
                 if self.hasInit then return end
                 self.hasInit = true
 
-                self.main = library:Create("Frame", {
+                self.main = library:Create("Square", {
                     BackgroundColor3 = Color3.fromRGB(30, 30, 30),
                     BorderColor3 = Color3.new(),
                     Parent = column.main
                 })
 
-                self.content = library:Create("Frame", {
+                self.content = library:Create("Square", {
                     Size = UDim2.new(1, 0, 1, 0),
                     BackgroundColor3 = Color3.fromRGB(30, 30, 30),
                     BorderColor3 = Color3.fromRGB(60, 60, 60),
@@ -2115,7 +2115,7 @@ function library:AddTab(title, pos)
                     Parent = self.main
                 })
 
-                table.insert(library.theme, library:Create("Frame", {
+                table.insert(library.theme, library:Create("Square", {
                     Size = UDim2.new(1, 0, 0, 1),
                     BackgroundColor3 = library.flags["Menu Accent Color"],
                     BorderSizePixel = 0,
@@ -2465,7 +2465,7 @@ function library:Init()
         Parent = self.base
     })
 
-    self.top = self:Create("Frame", {
+    self.top = self:Create("Square", {
         Size = UDim2.new(1, 0, 0, 50),
         BackgroundColor3 = Color3.fromRGB(30, 30, 30),
         BorderColor3 = Color3.new(),
@@ -2484,7 +2484,7 @@ function library:Init()
         Parent = self.main
     })
 
-    table.insert(library.theme, self:Create("Frame", {
+    table.insert(library.theme, self:Create("Square", {
         Size = UDim2.new(1, 0, 0, 1),
         Position = UDim2.new(0, 0, 0, 24),
         BackgroundColor3 = library.flags["Menu Accent Color"],
@@ -2501,14 +2501,14 @@ function library:Init()
         Parent = top
     })
 
-    self.tabHighlight = self:Create("Frame", {
+    self.tabHighlight = self:Create("Square", {
         BackgroundColor3 = library.flags["Menu Accent Color"],
         BorderSizePixel = 0,
         Parent = self.main
     })
     table.insert(library.theme, self.tabHighlight)
 
-    self.columnHolder = self:Create("Frame", {
+    self.columnHolder = self:Create("Square", {
         Position = UDim2.new(0, 5, 0, 55),
         Size = UDim2.new(1, -10, 1, -60),
         BackgroundTransparency = 1,
@@ -2526,7 +2526,7 @@ function library:Init()
         Parent = self.base
     })
 
-    self:Create("Frame", {
+    self:Create("Square", {
         AnchorPoint = Vector2.new(0.5, 0),
         Position = UDim2.new(0.5, 0, 0, 0),
         Size = UDim2.new(1, 10, 1, 0),
