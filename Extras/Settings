@@ -14,7 +14,7 @@ SettingSection:AddColor({text = "Accent Color", flag = "Menu Accent Color", colo
         library.currentTab.button.TextColor3 = color;
     end
     for i,v in pairs(library.theme) do
-        v[(v.Classr == "TextLabel" and "TextColor3") or (v.Classr == "ImageLabel" and "ImageColor3") or "BackgroundColor3"] = color;
+        v[(v.ClassName == "TextLabel" and "TextColor3") or (v.ClassName == "ImageLabel" and "ImageColor3") or "BackgroundColor3"] = color;
     end
 end});
 
@@ -51,13 +51,13 @@ SettingSection:AddSlider({text = "Tile Size", min = 50, max = 500, value = 50, c
     end
 end});
 
--- [Discord Button]
+-- [Unload Button]
 SettingSection:AddButton({text = "Unload", callback = function()
-    library:Unload();
+library:Unload()
 end});
 
 -- [Config Box]
-ConfigSection:AddBox({text = "Config r", skipflag = true});
+ConfigSection:AddBox({text = "Config Name", skipflag = true});
 
 -- [Config List]
 ConfigSection:AddList({text = "Configs", skipflag = true, value = "", flag = "Config List", values = library:GetConfigs()});
@@ -65,7 +65,7 @@ ConfigSection:AddList({text = "Configs", skipflag = true, value = "", flag = "Co
 -- [Create Button]
 ConfigSection:AddButton({text = "Create", callback = function()
     library:GetConfigs();
-    writefile(library.folderr .. "/" .. library.flags["Config Name"] .. library.fileext, "{}");
+    writefile(library.foldername .. "/" .. library.flags["Config Name"] .. library.fileext, "{}");
     library.options["Config List"]:AddValue(library.flags["Config Name"]);
 end});
 
